@@ -1,0 +1,34 @@
+---
+layout: page
+# The Home page layout
+---
+<div id="post-list">
+
+{% for post in site.posts %}
+  {% assign show = false %}
+  {% for tag in post.tags%}
+    {% if tag == "tools" %}
+      {% assign show = true %}
+    {% endif %}
+  {% endfor %}
+  {% if show == true %}
+  <div class="post-preview">
+    <h1>
+      <a href="{{ post.toolurl }}">{{ post.title }}</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        {{ post.toolinfo }}
+      </p>
+    </div>
+
+  </div> <!-- .post-review -->
+  {% endif %}
+{% endfor %}
+
+</div> <!-- #post-list -->
+
+{% if paginator.total_pages > 0 %}
+  {% include post-paginator.html %}
+{% endif %}
