@@ -8,7 +8,7 @@ tags: [project, ISU, portfolio]
 
 ![Processor Diagram](/images/381/hw.png)
 
-## Intro
+## Intro:
 
 This project was the most time consuming and effort intensive projects I undertook during my time at Iowa State University. The deliverable for this project was a 5 stage pipelined processor with hardware enforced data forwarding capabilities. This required our team to use everything we had learned about CPU design and more in order to finish on time.
 
