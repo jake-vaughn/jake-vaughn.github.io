@@ -24,10 +24,10 @@ timezone: America/Chicago
 
 title: Jake Vaughn # the main title
 
-tagline: A space for building and professional endeavors # it will display as the sub-title
+tagline: Welcome to my page! # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  A space for building and professional endeavors. Computer Engineering, tutorial blog posts. Learning all the time.
+  Computer Engineer from Iowa State University
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: ""
