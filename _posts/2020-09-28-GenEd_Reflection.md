@@ -1,7 +1,7 @@
 ---
 title: General Education Elective Reflection
 date: 2020-10-03 8:00:00 +/-1111
-author: Jacob Vaughn
+author: Jake Vaughn
 categories: [Reflection, Iowa State University]
 tags: [reflection, ISU, portfolio]
 ---

@@ -7,7 +7,7 @@ order: 4
 ## Who am I?
 
 Hello!
-My name is `Jacob Vaughn` and I'm a college graduate with a B.S. in Computer Engineering at Iowa State University (ISU).
+My name is `Jake Vaughn` and I'm a college graduate with a B.S. in Computer Engineering at Iowa State University (ISU).
 
 ## Professional Experience
 

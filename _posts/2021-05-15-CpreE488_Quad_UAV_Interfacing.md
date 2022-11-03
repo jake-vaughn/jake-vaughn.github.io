@@ -1,7 +1,7 @@
 ---
 title: Quad UAV Interface
 date: 2021-05-15 8:00:00 +/-1111
-author: Jacob Vaughn
+author: Jake Vaughn
 categories: [Projects, Iowa State University]
 tags: [project, ISU, portfolio]
 ---
