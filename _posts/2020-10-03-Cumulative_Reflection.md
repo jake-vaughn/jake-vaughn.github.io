@@ -8,7 +8,7 @@ tags: [reflection, ISU, portfolio]
 
 ### Intro:
 
-My name is Jacob Vaughn. As of writing this I am a Senior pursuing a degree in Computer Engineering at Iowa State University. During my time here, I’ve grown not just as an engineer but also as a person. I feel more prepared than ever to enter a technically complex and culturally diverse engineering environment. I’ve reached this point by pursuing different general education and project-based learning courses, participating in major and non-major extracurriculars, and performing independent research and development. Each of these aspects played a different role in my ongoing success, and they were all facilitated by ISU.
+My name is Jake Vaughn. As of writing this I am a Senior pursuing a degree in Computer Engineering at Iowa State University. During my time here, I’ve grown not just as an engineer but also as a person. I feel more prepared than ever to enter a technically complex and culturally diverse engineering environment. I’ve reached this point by pursuing different general education and project-based learning courses, participating in major and non-major extracurriculars, and performing independent research and development. Each of these aspects played a different role in my ongoing success, and they were all facilitated by ISU.
 
 ### Global Classroom Experiences
 
