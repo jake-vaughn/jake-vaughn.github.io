@@ -106,4 +106,4 @@ The current outcome of the project is a functioning software that allows me to t
 
 Full project code can be found on my github at [visualizing-substrate](https://github.com/jake-vaughn/visualizing-substrate)
 
-> Want to check out the graph from the beginning in more detail? Click [here](http://127.0.0.1:4000/images/Polkadot_Network_Visualization/30k.svg) and you will get a white screen scroll down and right to get to the middle where the nodes are.
+> Want to check out the graph from the beginning in more detail? Click [here](https://jake-vaughn.github.io/images/Polkadot_Network_Visualization/30k.svg) and you will get a white screen scroll down and right to get to the middle where the nodes are.
