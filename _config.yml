@@ -30,7 +30,7 @@ description: >- # used by seo meta and the atom feed
   Computer Engineer from Iowa State University
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ""
+url: "https://jake-vaughn.com"
 
 github:
   username: jake-vaughn # change to your github username
@@ -73,7 +73,7 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode: dark # [light|dark]
+theme_mode: # [light|dark]
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url

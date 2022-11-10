@@ -4,12 +4,12 @@ layout: page
 ---
 <div id="post-list">
 
-{% for post in site.posts %}
+  {% for post in site.posts %}
   {% assign show = false %}
   {% for tag in post.tags%}
-    {% if tag == "workexp" %}
-      {% assign show = true %}
-    {% endif %}
+  {% if tag == "guide" %}
+  {% assign show = true %}
+  {% endif %}
   {% endfor %}
   {% if show == true %}
   <div class="post-preview">
@@ -55,10 +55,10 @@ layout: page
 
   </div> <!-- .post-review -->
   {% endif %}
-{% endfor %}
+  {% endfor %}
 
 </div> <!-- #post-list -->
 
 {% if paginator.total_pages > 0 %}
-  {% include post-paginator.html %}
+{% include post-paginator.html %}
 {% endif %}

@@ -2,8 +2,8 @@
 title: Modifying EVM Bytecode Function Selectors   
 date: 2022-10-24 8:00:00 +/-1111
 author: Jake Vaughn
-categories: [Posts]
-tags: [evm, bytecode, function signatures, hashing, posts, function selectors]
+categories: [Guide]
+tags: [evm, bytecode, function signatures, hashing, guide, function selectors]
 ---
 
 ## Overview:

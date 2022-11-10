@@ -1,9 +1,9 @@
 ---
 title: Fast Moonbeam Node Setup   
-date: 2022-10-24 8:00:00 +/-1111
+date: 2022-11-08 8:00:00 +/-1111
 author: Jake Vaughn
-categories: [Posts]
-tags: [moonbeam, node, parachain, fast, server, posts]
+categories: [Guide]
+tags: [moonbeam, node, para-chain, fast, server, guide]
 ---
 
 # Overview:
