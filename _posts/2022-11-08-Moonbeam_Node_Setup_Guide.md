@@ -13,8 +13,8 @@ Topics in order are
 - [Creating a Hetzner Server](#creating-a-hetzner-server)
 - [Enabling SwapFile (optional)](#enabling-swapfile-optional)
 - [Downloading Snapshot (optional)](#downloading-snapshot-optional)
-  - [Moonbeam Relay Chain (Polkadot pruning 1000) Backup](#moonbeam-relay-chain-polkadot-pruning-1000-backup)
-  - [Moonbeam Parachain (state-pruning=archive) RocksDB Backup](#moonbeam-parachain-state-pruningarchive-rocksdb-backup)
+  - [Moonbeam Relay Chain Backup](#moonbeam-relay-chain-backup)
+  - [Moonbeam Parachain RocksDB Backup](#moonbeam-parachain-rocksdb-backup)
 - [Service and Binary Setup](#service-and-binary-setup)
 - [Configuration File](#configuration-file)
 - [Running the Service](#running-the-service)
@@ -23,7 +23,7 @@ Topics in order are
 # Creating a Hetzner Server
 If you want to run your node on a server then Hetzner is your best bet. There are other options out there like Digital Ocean and Vultr, but neither of them gets to the price point that Hetzner provides.
 
-First Create an account at [Hetzner](https://accounts.hetzner.com/signUp). Then login at [hetzner.cloud](https://console.hetzner.cloud/projects) and bookmark this page. Go ahead and create a new project naming it whatever you like. Once it is created click on it and then click on ADD SERVER. In the options pick any location you want and Ububuntu for the Image.
+First Create an account at [Hetzner](https://accounts.hetzner.com/signUp). Then login at [hetzner.cloud](https://console.hetzner.cloud/projects) and bookmark this page. Go ahead and create a new project naming it whatever you like. Once it is created click on it and then click on ADD SERVER. In the options pick any location you want and Ubuntu for the Image.
 
 ![Server Creation 1](/images/MoonbeamNode/createServer1.png)
 Next pick the type standard and the option CPX41 which has 240 GB of storage.
@@ -104,7 +104,7 @@ After the volume is created go back to where you logged into the server and conf
 
 This mounts the volume at `/mnt/volume1` where we will download the backups. To download the most recent backup use
 
-## <u> Moonbeam Relay Chain (Polkadot pruning 1000) Backup </u>
+## Moonbeam Relay Chain Backup
 
 Download the backup to volume1. This will take time depending on your network speed.
 ```bash
@@ -137,7 +137,7 @@ sudo tar -I 'zstd -vd -T0 -D /mnt/volume1/moonbeam-polkadot-sst.dict' -xvf /mnt/
 
 This should take some time so wait until it is finished.
 
-## <u> Moonbeam Parachain (state-pruning=archive) RocksDB Backup </u>
+## Moonbeam Parachain RocksDB Backup
 
 The process for downloading the Moonbeam Parachain is almost the same as the Relay Chain so I won't go into as much detail.
 
