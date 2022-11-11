@@ -242,6 +242,7 @@ ExecStart=/var/lib/moonbeam-data/moonbeam \
      --rpc-port 9934 \
      --ws-port 9945 \
      --execution wasm \
+     --state-pruning 1000 \
      --name="YOUR-NODE-NAME (Embedded Relay)"
 
 [Install]
@@ -263,7 +264,7 @@ Check the output logs from the node with
 ```bash
 journalctl -f -u moonbeam.service
 ```
-Your node should now be running and should start back up if you ever reboot the system. 
+Your node should now be running and should start back up if you ever reboot the system. Depending on if you downloaded the optional backups complete syncing of the node should take around 2-3 days.
 
 If you ever need to stop the service do it with
 
