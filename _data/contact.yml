@@ -17,7 +17,7 @@
 #   url:  ''                  # Fill with your mastodon account page
 - type: linkedin
   icon: "fab fa-linkedin" # icons powered by <https://fontawesome.com/>
-  url: "https://www.linkedin.com/in/jacob-vaughn-6737461a5/" # Fill with your Linkedin homepage
+  url: "https://www.linkedin.com/in/jakevaughn/" # Fill with your Linkedin homepage
 # -
 #   type: stack-overflow
 #   icon: 'fab fa-stack-overflow'
