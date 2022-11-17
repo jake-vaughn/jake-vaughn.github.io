@@ -6,10 +6,10 @@ categories: [Projects]
 tags: [project, portfolio, Polkadot, SQL, Database, Gephi]
 ---
 
-![30k](/images/Polkadot_Network_Visualization/30kCR.svg)
-
-## Overview:
+# Overview:
 This post is on a project I have been working on named Visualizing-Substrate. It is a program that can access database .db files and use RPC/API calls to substrate-based chains (currently Polkadot and Kusama) to create nodes and edges based on addresses, balances, and transaction data for the entire history of the chain. Addresses and transactions converted to nodes can be chosen based on current address holding and or transaction sizes. The project is currently written in typescript utilizing npm [SQLite](https://www.npmjs.com/package/better-sqlite3) packages to access the database. Output from my program is designed to be used with [Gephi](https://gephi.org/) (an open-source network analysis and visualization software) to visualize and organize the nodes and edges with layout algorithms such as the [Yifan Hu algorithm](http://yifanhu.net/PUB/graph_draw_small.pdf) an example of which above.
+
+![30k](/images/Polkadot_Network_Visualization/30kCR.svg)
 
 ## Description
 I came up with the idea out of an interest to identify connected accounts and be able to visualize where native tokens on the Kusama blockchain were and who had them. With this program it is easy to identify where assets originate on-chain, where they are currently, and the path they took to get there. Using the community detection algorithm named Modularity also allows me to color nodes by groups depending on their connections. A good example of this is the orange, teal, green, and blue color groups below that all interact with seemingly central nodes. These different colored groups are based on the exchanges that the nodes interact with.
