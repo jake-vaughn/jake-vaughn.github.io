@@ -3,7 +3,7 @@ title: CprE 381 Processor Design
 date: 2019-09-01 8:00:00 +/-1111
 author: Jake Vaughn
 categories: [Projects, Iowa State University]
-tags: [project, ISU, portfolio]
+tags: [project, ISU, portfolio, ModelSim]
 ---
 
 ![Processor Diagram](/images/381/hw.png)

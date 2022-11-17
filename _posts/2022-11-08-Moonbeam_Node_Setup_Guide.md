@@ -3,7 +3,7 @@ title: Moonbeam Node Setup Guide
 date: 2022-11-08 8:00:00 +/-1111
 author: Jake Vaughn
 categories: [Guides]
-tags: [moonbeam, node, para-chain, fast, server, guide, setup]
+tags: [moonbeam, node, para-chain, server, guide, setup]
 ---
 
 # Overview:
