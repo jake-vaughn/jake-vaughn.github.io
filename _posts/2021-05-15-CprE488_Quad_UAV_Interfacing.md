@@ -1,5 +1,5 @@
 ---
-title: Quad UAV Interface
+title: CprE 488 Quad UAV Interface
 date: 2021-05-15 8:00:00 +/-1111
 author: Jake Vaughn
 categories: [Projects, Iowa State University]
