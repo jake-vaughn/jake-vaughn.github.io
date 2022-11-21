@@ -16,9 +16,9 @@ Our goal for this project was to design an interfacing and control platform for 
 ## Concepts
 
 Concepts that we learned were
-- Interfacing – you will reverse engineer an RC transmitter to gain an understanding of the trainer interface and format. 
-- IP core design and integration – you will use the Xilinx tools to generate an AMBA AXI4-compliant IP core that you will integrate into an existing XPS project. 
-- Finite State Machine design – you will design and implement an FSM-based hardware module to record and transmit PPM data.
+- Interfacing – Reverse engineering of an RC transmitter to gain an understanding of the trainer interface and format. 
+- IP core design and integration – Use of Xilinx tools to generate an AMBA AXI4-compliant IP core that will integrate into an existing XPS project. 
+- Finite State Machine design – Design and implement an FSM-based hardware module to record and transmit PPM data.
 
 
 ## Description
