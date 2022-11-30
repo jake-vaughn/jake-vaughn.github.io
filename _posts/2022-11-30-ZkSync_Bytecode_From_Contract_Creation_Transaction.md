@@ -1,5 +1,5 @@
 ---
-title: Get ZkSync Contract Bytecode
+title: ZkSync Bytecode From Contract Creation Transaction
 date: 2022-11-30 8:00:00 +/-1111
 author: Jake Vaughn
 categories: [Guides]
