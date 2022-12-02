@@ -9,7 +9,7 @@ tags: [project, ISU, portfolio, IEEE, ASIC, ModelSim, Innouvus, Verilog]
 # Overview:
 In this project, I designed an ASIC that can take any number of random input temperatures and calculate the Moving average or standard deviation. In order to optimize for power, area, and timing the design of the device needed to be an ASIC rather than a software program run on a processor. To accomplish this I need to solve the problem of creating moving averages and standard deviations in as low-level logic as possible. The end design of the ASIC was in the micrometer scale.
 
-![Innovus-diagram](/images/465/innovus-diagram1_orig.png)
+![Innouvus-diagram](/images/465/innovus-diagram1_orig.png)
 
 ## Description
 The device will calculate up to 12 temperature readings at a time, prioritizing the last 12 temperatures entered by the user. Once the user stops inputting values depending on the operating mode either the moving average or standard deviation will be computed for the 12 values. After calculation, a signal flag will be sent to the user saying it has completed the solution through the wire vector AVG/SD. Once it has been done and is ready for use again it will send a SAMPLE flag to the user for a clock cycle. Once the user gets the sample flag they can input fresh new data set to calculate. Each future reading of standard deviation then uses a guess value which makes it faster to find future readings.
