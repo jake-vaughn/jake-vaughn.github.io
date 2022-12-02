@@ -1,6 +1,6 @@
 ---
 title: CprE 381 MIPS Processor Design
-date: 2020-09-01 8:00:00 +/-1111
+date: 2020-09-03 8:00:00 +/-1111
 author: Jake Vaughn
 categories: [Projects, Iowa State University]
 tags: [project, ISU, portfolio, ModelSim, VHDL]
