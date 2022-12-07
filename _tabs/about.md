@@ -11,11 +11,15 @@ My name is `Jake Vaughn` and I'm a college graduate with a B.S. in Computer Engi
 
 ## Professional Experience
 
-Since the beginning of the 2020, I have been working self-employed in the web3 blockchain space. I have a diverse range of experience, including Ethereum mining, arbitrage bots, and setting up RPC/WSS API nodes on multiple blockchain networks. I have set up and hosted EVM nodes on networks such as Ethereum, Polygon, Moonbeam, Moonriver, and Polkadot. I have also been paid to create and work on decentralized applications (dApps) such as decentralized exchanges (DEXes), non-fungible token (NFT) platforms, proxy contracts, and token deployers using languages and tools like Remix, Hardhat, Solidity, NodeJS, and Typescript. My main focus is on smart contract bytecode deployment, security, and optimization. I also enjoy working on backend integration with RPC and WSS APIs. I have learned everything I know through self-education and experimentation, using online documentation and other resources.
+Since the beginning of 2020, I have been working in the web3 blockchain space as a self-employed individual. My work has included a variety of activities, such as mining Ethereum, creating arbitrage/mev bots, and setting up RPC/WSS API endpoints on multiple blockchain networks. I have also set up and managed blockchain full nodes on networks like Ethereum, Polygon, xDai, Moonbeam, and Polkadot. Additionally, I have developed decentralized applications (dApps) such as decentralized exchanges (DEXes), proxy contracts, and token deployers using tools like Remix, Hardhat, Solidity, NodeJS, and Typescript. My main focus is on smart contract bytecode deployment, security, and optimization, as well as backend integration with RPC and WSS APIs. I have learned all of these skills through self-education and experimentation, using online resources and documentation.
 
 ## Educational Experience
 
-I earned my Bachelor's degree in Computer Engineering from Iowa State University in May 2021. While in college, I learned how to program in languages such as C/C++, Java, Python, VHDL, and Verilog. I completed various projects and labs, gaining skills in electrical engineering, operating systems, process and thread scheduling, and memory management, among other areas. In my degree program, I chose to focus on Embedded Systems, VLSI, and Cyber Security, which required me to complete specific coursework in order to graduate.
+As a computer engineer, I have had the opportunity to learn and develop a wide range of technical and non-technical skills. I have studied programming languages such as C, C++, and Java, and have used these skills to design and implement complex software systems. I have also gained expertise in computer architecture and networking, which has helped me understand the underlying systems that support modern computing.
+
+In addition to my technical skills, I have also had the opportunity to develop important non-technical skills, such as problem-solving, critical thinking, and communication. These skills have been valuable in my work as a computer engineer, as they have allowed me to collaborate effectively with other team members and tackle complex projects.
+
+Overall, my educational experience as a computer engineer has been incredibly rewarding, and has provided me with the skills and knowledge necessary to succeed in this field. I am excited to continue learning and growing as a computer engineer, and to apply my skills to help solve some of the world's most challenging problems.
 
 ## Career Objectives
 
