@@ -7,7 +7,6 @@ tags: [moonbeam, node, para-chain, server, guide, setup]
 ---
 
 # Overview:
-Topics in order are
 - [Creating a Hetzner Server](#creating-a-hetzner-server)
 - [Downloading Snapshot (optional)](#downloading-snapshot-optional)
   - [Moonbeam Relay Chain Backup](#moonbeam-relay-chain-backup)
@@ -27,7 +26,7 @@ Next pick the type standard and the option CPX41 which has 240 GB of storage.
 
 ![Server Creation 2](/images/MoonbeamNode/createServer2.png)
 
-Current requirements for a node based on the [moonbeam docs](https://docs.moonbeam.network/node-operators/networks/run-a-node/overview/#requirements) say that we need an 8 Core CPU, 16 GB Ram, and a 1 TB SSD. These requirements are a bit over the top as they are intended for Validators/Collators and are future-proof. The main minimum specs we need to worry about is storage. As of writing this post a Full node on moonbeam currently needs roughly 200 GB of SSD storage (160 GB if you don't need to full block history). This storage requirement will grow with time so keep that in mind. For now, we can use the CPX41 option as it meets the requirements, but most importantly the storage.
+Current requirements for a node based on the [moonbeam docs](https://docs.moonbeam.network/node-operators/networks/run-a-node/overview/#requirements) say that we need an 8 Core CPU, 16 GB Ram, and a 1 TB SSD. These requirements are a bit over the top as they are intended for Validators/Collators and are future-proof. The main minimum specs we need to worry about is storage. As of writing this post a Full node on moonbeam currently needs roughly 400 GB of storage. This storage requirement will grow with time so keep that in mind. For now, we can use the CPX41 option as it meets the requirements, but most importantly the storage.
 
 > Node: Going under the 8 Core and 16 GB Ram requirements will work fine for a noncritical node and will only result in slower sync time. However, it is not recommended for Validators/Collators.
 
@@ -52,10 +51,10 @@ Once logged in I recommend updating the server using 
 ```bash
 sudo apt update && sudo apt upgrade
 ```
- and rebooting.
+and rebooting.
 
 # Creating a Volume
-In Hetzner click on the server, you created and go to the VOLUMES tab on the left. Then click Create Volume and set the storage to 420 GB and name it volume1. Now click CREATE & BUY NOW.
+In Hetzner click on the server, you created and go to the VOLUMES tab on the left. Then click Create Volume and set the storage to 560 GB and name it volume1. Now click CREATE & BUY NOW.
 
 ![Create Volume](/images/MoonbeamNode/createVolume.png)
 
@@ -89,7 +88,7 @@ install zstd (ZSTD speeds up the unzipping process)
 sudo apt install zstd
 ```
 
-Create the directory for the database in var/lib
+Create the directory for the database in mnt/volume1
 ```bash
 sudo mkdir -p /mnt/volume1/moonbeam-data/polkadot/chains/polkadot/db
 ```
@@ -98,6 +97,8 @@ and finally unzip the backup to the database using
 ```bash
 sudo tar -I 'zstd -vd -T0 -D /mnt/volume1/moonbeam-polkadot-sst.dict' -xvf moonbeam-polkadot-backup.tar.zst -C /mnt/volume1/moonbeam-data/polkadot/chains/polkadot/db --strip-components=7
 ```
+
+> Note: Do not disconect from the server while unziping the backup or it will stop.
 
 This should take some time so wait until it is finished.
 
@@ -112,7 +113,7 @@ wget -O /mnt/volume1/moonbeam-sst.dict https://db.certhum.com/moonbeam-sst.dict
 
 sudo mkdir -p /mnt/volume1/moonbeam-data/chains/moonbeam/db
 
-sudo tar -I 'zstd -vd -T0 -D mnt/volume1/moonbeam-sst.dict' -xvf /mnt/volume1/moonbeam-backup-archive.tar.zst -C /mnt/volume1/moonbeam-data/chains/moonbeam/db --strip-components=6
+sudo tar -I 'zstd -vd -T0 -D /mnt/volume1/moonbeam-sst.dict' -xvf /mnt/volume1/moonbeam-backup-archive.tar.zst -C /mnt/volume1/moonbeam-data/chains/moonbeam/db --strip-components=6
 ```
 
 # Service and Binary Setup
@@ -134,7 +135,8 @@ sudo mkdir /mnt/volume1/moonbeam-data
 3. Downloads the Latest [Moonbeam Binary](https://github.com/PureStake/moonbeam/releases):
 
 ```bash
-sudo wget -O /mnt/volume1/moonbeam-data/moonbeam https://github.com/PureStake/moonbeam/releases/latest/download/moonbeam
+sudo wget -O /mnt/volume1/moonbeam-data/moonbeam https://github.com/PureStake/moonbeam/releases/download/v0.30.0/moonbeam
+
 ```
 
 4. Sets the ownership and permissions for the local directory that stores the chain data:
@@ -172,7 +174,7 @@ User=moonbeam_service
 SyslogIdentifier=moonbeam
 SyslogFacility=local7
 KillSignal=SIGHUP
-ExecStart=/var/lib/moonbeam-data/moonbeam \
+ExecStart=/mnt/volume1/moonbeam-data/moonbeam \
      --port 30333 \
      --rpc-port 9933 \
      --ws-port 9944 \
@@ -180,7 +182,7 @@ ExecStart=/var/lib/moonbeam-data/moonbeam \
      --wasm-execution compiled \
      --state-pruning=archive \
      --trie-cache-size 0 \
-     --base-path /var/lib/moonbeam-data \
+     --base-path /mnt/volume1/moonbeam-data \
      --chain moonbeam \
      --name "YOUR-NODE-NAME" \
      -- \
