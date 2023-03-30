@@ -123,7 +123,7 @@ The following commands will set up everything regarding running the service.
 1. Creates a service account to run the service:
 
 ```bash
-adduser moonbeam_service - system - no-create-home
+adduser moonbeam_service --system --no-create-home
 ```
 
 2. Creates a directory to store the binary and data:
@@ -136,7 +136,6 @@ sudo mkdir /mnt/volume1/moonbeam-data
 
 ```bash
 sudo wget -O /mnt/volume1/moonbeam-data/moonbeam https://github.com/PureStake/moonbeam/releases/download/v0.30.0/moonbeam
-
 ```
 
 4. Sets the ownership and permissions for the local directory that stores the chain data:
