@@ -40,7 +40,7 @@ Once the SSH key is added leave everything else default and click CREATE & BUY N
 
 With the server created we can now login using ssh.
 
-```
+```bash
 ssh root@<SERVER_IP>
 ```
 You should then get a response as such.
@@ -48,7 +48,7 @@ You should then get a response as such.
 ![SSH Login](/images/MoonbeamNode/sshLogin.png)
 
 Once logged in I recommend updating the server using 
-```
+```bash
 sudo apt update && sudo apt upgrade
 ```
 and rebooting.
@@ -70,7 +70,7 @@ Something that can GREATLY increase sync time is downloading an already synced s
 ## Moonbeam Relay Chain Backup
 
 Download the backup to volume1. This will take time depending on your network speed.
-```
+```bash
 wget -O /mnt/volume1/moonbeam-polkadot-backup.tar.zst https://db.certhum.com/moonbeam-polkadot-backup.tar.zst
 ```
 
@@ -79,22 +79,22 @@ wget -O /mnt/volume1/moonbeam-polkadot-backup.tar.zst https://db.certhum.com/moo
 ![wgetBackup](/images/MoonbeamNode/wgetBackup.png)
 
 next download the sst
-```
+```bash
 wget -O /mnt/volume1/moonbeam-polkadot-sst.dict https://db.certhum.com/moonbeam-polkadot-sst.dict
 ```
 
 install zstd (ZSTD speeds up the unzipping process)
-```
+```bash
 sudo apt install zstd
 ```
 
 Create the directory for the database in mnt/volume1
-```
+```bash
 sudo mkdir -p /mnt/volume1/moonbeam-data/polkadot/chains/polkadot/db
 ```
 
 and finally unzip the backup to the database using
-```
+```bash
 sudo tar -I 'zstd -vd -T0 -D /mnt/volume1/moonbeam-polkadot-sst.dict' -xvf moonbeam-polkadot-backup.tar.zst -C /mnt/volume1/moonbeam-data/polkadot/chains/polkadot/db --strip-components=7
 ```
 
@@ -106,16 +106,16 @@ This should take some time so wait until it is finished.
 
 The process for downloading the Moonbeam Parachain is almost the same as the Relay Chain so I won't go into as much detail.
 
-```
+```bash
 wget -O /mnt/volume1/moonbeam-backup-archive.tar.zst https://db.certhum.com/moonbeam-backup.tar.zst
 ```
-```
+```bash
 wget -O /mnt/volume1/moonbeam-sst.dict https://db.certhum.com/moonbeam-sst.dict
 ```
-```
+```bash
 sudo mkdir -p /mnt/volume1/moonbeam-data/chains/moonbeam/db
 ```
-```
+```bash
 sudo tar -I 'zstd -vd -T0 -D /mnt/volume1/moonbeam-sst.dict' -xvf /mnt/volume1/moonbeam-backup-archive.tar.zst -C /mnt/volume1/moonbeam-data/chains/moonbeam/db --strip-components=6
 ```
 
@@ -125,28 +125,28 @@ The following commands will set up everything regarding running the service.
 
 1. Creates a service account to run the service:
 
-```
+```bash
 adduser moonbeam_service --system --no-create-home
 ```
 
 2. Creates a directory to store the binary and data:
 
-```
+```bash
 sudo mkdir /mnt/volume1/moonbeam-data
 ```
 
 3. Downloads the Latest [Moonbeam Binary](https://github.com/PureStake/moonbeam/releases):
 
-```
+```bash
 sudo wget -O /mnt/volume1/moonbeam-data/moonbeam https://github.com/PureStake/moonbeam/releases/download/v0.30.1/moonbeam
 ```
 
 4. Sets the ownership and permissions for the local directory that stores the chain data:
 
-```
+```bash
 sudo chmod +x /mnt/volume1/moonbeam-data/moonbeam
 ```
-```
+```bash
 sudo chown -R moonbeam_service /mnt/volume1/moonbeam-data
 ```
 
@@ -158,13 +158,13 @@ The next step is to create the systemd configuration file. Depending on your nee
 
 Create the config file at /etc/systemd/system/moonbeam.service
 
-```
+```bash
 sudo nano /etc/systemd/system/moonbeam.service
 ```
 
 Add the following to the file changing YOUR-NODE-NAME to a name you want.
 
-```
+```conf
 [Unit]
 Description="Moonbeam systemd service"
 After=network.target
@@ -207,26 +207,28 @@ Save the file with `Ctrl+s` and close it with `Ctrl+x`
 
 The last thing to do is enable and run the service.
 
-```
+```bash
 systemctl enable moonbeam.service
+```
+```bash
 systemctl start moonbeam.service
 ```
 
 Check the output logs from the node with
-```
+```bash
 journalctl -f -u moonbeam.service
 ```
 Your node should now be running and should start back up if you ever reboot the system. Depending on if you downloaded the optional backups complete syncing of the node should take around 2-3 days.
 
 If you ever need to stop the service do it with
 
-```
+```bash
 systemctl stop moonbeam.service
 ```
 
 and if you want to disable the service from starting on reboot
 
-```
+```bash
 systemctl disable moonbeam.service
 ```
 
