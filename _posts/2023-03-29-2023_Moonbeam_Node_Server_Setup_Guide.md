@@ -64,6 +64,44 @@ After the volume is created go back to where you logged into the server and conf
 
 This mounts the volume at `/mnt/volume1` where we will download the chain data.
 
+# Enabling SwapFile
+Creating a Linux SwapFile is not necessary but is nice to have if you are running other memory-intensive programs on your server. Using a swap is a very useful way to extend the RAM because it provides the necessary additional memory when the RAM space has been exhausted and a process has to be continued. If you want to create a swap file run the following commands.
+
+```bash
+sudo fallocate -l 16G /swapfile
+```
+```bash
+sudo chmod 600 /swapfile
+```
+```bash
+sudo mkswap /swapfile
+```
+```bash
+sudo swapon /swapfile
+```
+Open the /etc/fstab file
+```bash
+sudo nano /etc/fstab
+```
+
+add the following to the end of the file
+
+```s
+/swapfile swap swap defaults 0 0
+```
+Save the file with `Ctrl+s` and close it with `Ctrl+x`
+
+To verify that the swap file is active use
+```bash
+sudo swapon - show
+```
+
+It should result in something like the following.
+```console
+NAME TYPE SIZE USED PRIO
+/swapfile file 1024M 507.4M -1
+```
+
 # Downloading Snapshot (optional)
 Something that can GREATLY increase sync time is downloading an already synced snapshot of either the moonbeam para-chain, the relay chain, or both. If you need your node up quickly or don't want to bother waiting this is your best option. My current recommendation is to use [Certhum's backups](https://www.certhum.com/moonbeam-databases) as they are updated regularly. If you want to sync the node from scratch skip down to the section [Service and Binary Setup](#service-and-binary-setup).
 
@@ -138,7 +176,7 @@ sudo mkdir /mnt/volume1/moonbeam-data
 3. Downloads the Latest [Moonbeam Binary](https://github.com/PureStake/moonbeam/releases):
 
 ```bash
-sudo wget -O /mnt/volume1/moonbeam-data/moonbeam https://github.com/PureStake/moonbeam/releases/download/v0.30.1/moonbeam
+sudo wget -O /mnt/volume1/moonbeam-data/moonbeam https://github.com/PureStake/moonbeam/releases/download/v0.30.3/moonbeam
 ```
 
 4. Sets the ownership and permissions for the local directory that stores the chain data:
@@ -179,9 +217,6 @@ SyslogIdentifier=moonbeam
 SyslogFacility=local7
 KillSignal=SIGHUP
 ExecStart=/mnt/volume1/moonbeam-data/moonbeam \
-     --port 30333 \
-     --rpc-port 9933 \
-     --ws-port 9944 \
      --execution wasm \
      --wasm-execution compiled \
      --state-pruning=archive \
@@ -190,9 +225,6 @@ ExecStart=/mnt/volume1/moonbeam-data/moonbeam \
      --chain moonbeam \
      --name "YOUR-NODE-NAME" \
      -- \
-     --port 30334 \
-     --rpc-port 9934 \
-     --ws-port 9945 \
      --execution wasm \
      --state-pruning 1000 \
      --name="YOUR-NODE-NAME (Embedded Relay)"
