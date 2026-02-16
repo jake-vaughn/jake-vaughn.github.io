@@ -24,7 +24,7 @@ timezone: America/Chicago
 
 title: Jake Vaughn # the main title
 
-tagline: Welcome to my page! # it will display as the sub-title
+tagline: The answer you are looking for is 42 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   Computer Engineer from Iowa State University
